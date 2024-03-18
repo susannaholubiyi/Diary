@@ -78,6 +78,21 @@ class DiaryServicesImplementsTest {
         loginRequest.setPassword("different password");
         assertThrows(IncorrectPasswordException.class,()->diaryServices.login(loginRequest));
     }
+    @Test
+    public void registerUser_userLogin_userLogoutTest(){
+        RegisterRequest registerRequest = new RegisterRequest();
+        registerRequest.setUserName("user name");
+        registerRequest.setPassword("password");
+        diaryServices.register(registerRequest);
+
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUserName("user name");
+        loginRequest.setPassword("password");
+        diaryServices.login(loginRequest);
+
+        assertTrue(diaryServices.isLoggedIn());
+
+    }
 
 
 }

@@ -19,9 +19,7 @@ public class Diary {
     public void unlock() {
         isLocked = false;
     }
-    public boolean lock() {
-        return isLocked;
-    }
+
 
     public Diary(String userName, String password){
         this.userName = userName;

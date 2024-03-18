@@ -41,6 +41,11 @@ public class DiaryServicesImplements implements DiaryServices{
         isLoggedIn = true;
     }
 
+    @Override
+    public void logout() {
+
+    }
+
     private boolean validatePassword(String storedPassword, String providedPassword) {
         if(providedPassword.equals(storedPassword)) return true;
         else throw new IncorrectPasswordException(String.format("%s is incorrect, kindly input correct password", providedPassword));

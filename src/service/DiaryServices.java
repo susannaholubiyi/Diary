@@ -8,6 +8,7 @@ public interface DiaryServices {
     long getNumberOfUsers();
 
     void login(LoginRequest loginRequest);
+    void logout();
 
     boolean isLoggedIn();
 }

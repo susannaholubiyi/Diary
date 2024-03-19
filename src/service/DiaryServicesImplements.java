@@ -11,15 +11,16 @@ import service.exceptions.UserAlreadyExistsException;
 
 public class DiaryServicesImplements implements DiaryServices{
     DiaryRepository diaryRepository = new DiaryRepositoryImplement();
-    private boolean isLoggedIn;
 
     @Override
     public void register(RegisterRequest registerRequest) {
         isNewUser(registerRequest.getUserName());
             Diary newDiary = new Diary();
-            newDiary.setUserName(registerRequest.getUserName());
+            String cleanedName = cleanUp(registerRequest.getUserName());
+            newDiary.setUserName(cleanedName);
             newDiary.setPassword(registerRequest.getPassword());
             diaryRepository.save(newDiary);
+
     }
 
     private void isNewUser(String username) {
@@ -34,21 +35,26 @@ public class DiaryServicesImplements implements DiaryServices{
 
     @Override
     public void login(LoginRequest loginRequest) {
-        Diary diary = isRegisteredUser(loginRequest.getUserName());
+        String cleanedName = cleanUp(loginRequest.getUserName());
+        Diary diary = isRegisteredUser(cleanedName);
         String providedPassword = loginRequest.getPassword();
-
-        if(validatePassword(diary.getPassword(), providedPassword)) diary.unlock();
-        isLoggedIn = true;
+        if(validatePassword(diary.getPassword(), providedPassword)){diary.setLock(true);}
+        diaryRepository.save(diary);
     }
 
     @Override
-    public void logout() {
-
+    public void logout(String username) {
+        String cleanedName =  cleanUp(username);
+        var diary = findUserBy(cleanedName);
+        diary.setLock(false);
     }
+
+
 
     @Override
     public Diary findUserBy(String username) {
-        var diary = diaryRepository.findById(username);
+        String cleanedName =  cleanUp(username);
+        var diary = diaryRepository.findById(cleanedName);
         return diary;
     }
 
@@ -62,6 +68,9 @@ public class DiaryServicesImplements implements DiaryServices{
         if(diary == null) throw new NotRegisteredUserException(String.format("%s is not a registered user, kindly register", userName));
 
         return diary;
+    }
+    private String cleanUp(String username) {
+        return username.toLowerCase().strip();
     }
 
 

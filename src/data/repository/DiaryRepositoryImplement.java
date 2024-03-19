@@ -9,8 +9,13 @@ public class DiaryRepositoryImplement implements DiaryRepository{
     List<Diary> diaries = new ArrayList<>();
     @Override
     public Diary save(Diary diary) {
+        removeExistingDiary(diary);
         diaries.add(diary);
         return diary;
+    }
+
+    private void removeExistingDiary(Diary diary) {
+        diaries.removeIf(foundDiary -> foundDiary == diary);
     }
 
     @Override

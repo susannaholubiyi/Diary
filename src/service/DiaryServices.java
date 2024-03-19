@@ -9,7 +9,7 @@ public interface DiaryServices {
     long getNumberOfUsers();
 
     void login(LoginRequest loginRequest);
-    void logout();
+    void logout(String name);
 
     Diary findUserBy(String username);
 }

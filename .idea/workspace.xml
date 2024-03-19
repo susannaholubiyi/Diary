@@ -7,11 +7,9 @@
     <list default="true" id="d9294f37-dc34-4299-8d01-2b65df688ff8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/model/Diary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Diary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/model/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DiaryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DiaryServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data/repository/DiaryRepositoryImplementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/repository/DiaryRepositoryImplementTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data/repository/EntryRepositoryImplementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/repository/EntryRepositoryImplementTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/service/DiaryServicesImplementsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/DiaryServicesImplementsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,43 +64,15 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="service" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="service" />
       <recent name="data.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EntryRepositoryImplementTest">
-    <configuration name="DiaryRepositoryImplementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryThatRemembers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="data.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="data.repository" />
-      <option name="MAIN_CLASS_NAME" value="data.repository.DiaryRepositoryImplementTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DiaryRepositoryImplementTest.addThreeDiary_deleteDiaryTwoByObject_findDiaryOneAndThreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryThatRemembers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="data.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="data.repository" />
-      <option name="MAIN_CLASS_NAME" value="data.repository.DiaryRepositoryImplementTest" />
-      <option name="METHOD_NAME" value="addThreeDiary_deleteDiaryTwoByObject_findDiaryOneAndThreeTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DiaryServicesImplementsTest">
     <configuration name="DiaryServicesImplementsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
@@ -118,44 +88,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServicesImplementsTest.registerOneUser_userCanLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServicesImplementsTest.registerUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.exceptions.*" />
+          <option name="PATTERN" value="service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="service" />
       <option name="MAIN_CLASS_NAME" value="service.DiaryServicesImplementsTest" />
-      <option name="METHOD_NAME" value="registerOneUser_userCanLoginTest" />
+      <option name="METHOD_NAME" value="registerUserTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntryRepositoryImplementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServicesImplementsTest.registerUserWithSmallerCase_UserCanLoinWithUpperCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="data.repository.*" />
+          <option name="PATTERN" value="service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="data.repository" />
-      <option name="MAIN_CLASS_NAME" value="data.repository.EntryRepositoryImplementTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.DiaryServicesImplementsTest" />
+      <option name="METHOD_NAME" value="registerUserWithSmallerCase_UserCanLoinWithUpperCaseTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryServicesImplementsTest.registerUser_userLogin_userLogoutTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryThatRemembers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.DiaryServicesImplementsTest" />
+      <option name="METHOD_NAME" value="registerUser_userLogin_userLogoutTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiaryServicesImplementsTest.usernameIsConvertedToSmallerCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiaryThatRemembers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.DiaryServicesImplementsTest" />
+      <option name="METHOD_NAME" value="usernameIsConvertedToSmallerCaseTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EntryRepositoryImplementTest" />
-        <item itemvalue="JUnit.DiaryRepositoryImplementTest" />
         <item itemvalue="JUnit.DiaryServicesImplementsTest" />
-        <item itemvalue="JUnit.DiaryServicesImplementsTest.registerOneUser_userCanLoginTest" />
-        <item itemvalue="JUnit.DiaryRepositoryImplementTest.addThreeDiary_deleteDiaryTwoByObject_findDiaryOneAndThreeTest" />
+        <item itemvalue="JUnit.DiaryServicesImplementsTest.registerUserWithSmallerCase_UserCanLoinWithUpperCaseTest" />
+        <item itemvalue="JUnit.DiaryServicesImplementsTest.usernameIsConvertedToSmallerCaseTest" />
+        <item itemvalue="JUnit.DiaryServicesImplementsTest.registerUser_userLogin_userLogoutTest" />
+        <item itemvalue="JUnit.DiaryServicesImplementsTest.registerUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +176,7 @@
       <workItem from="1710747814129" duration="2548000" />
       <workItem from="1710762270387" duration="3441000" />
       <workItem from="1710797669402" duration="1831000" />
-      <workItem from="1710834386026" duration="2880000" />
+      <workItem from="1710834386026" duration="15869000" />
     </task>
     <servers />
   </component>

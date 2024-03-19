@@ -16,9 +16,13 @@ public class Diary {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public void unlock() {
-        isLocked = false;
+    public void setLock(boolean locked){
+        isLocked = locked;
     }
+    public boolean isLocked(){
+        return isLocked;
+    }
+
 
 
     public Diary(){

@@ -21,10 +21,6 @@ public class Diary {
     }
 
 
-    public Diary(String userName, String password){
-        this.userName = userName;
-        this.password = password;
-    }
     public Diary(){
 
     }

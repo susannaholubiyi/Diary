@@ -1,5 +1,6 @@
 package service;
 
+import data.model.Diary;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
 
@@ -10,5 +11,5 @@ public interface DiaryServices {
     void login(LoginRequest loginRequest);
     void logout();
 
-    boolean isLoggedIn();
+    Diary findUserBy(String username);
 }

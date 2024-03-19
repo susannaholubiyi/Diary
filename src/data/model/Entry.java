@@ -7,10 +7,6 @@ public class Entry {
     private String body;
     private int id;
     private LocalDate dateCreated = LocalDate.now();
-    public Entry(String title, String body){
-        this.title = title;
-        this.body = body;
-    }
 
     public int getId() {
         return id;

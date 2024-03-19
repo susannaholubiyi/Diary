@@ -92,6 +92,7 @@ class DiaryServicesImplementsTest {
 
         assertTrue(diaryServices.isLoggedIn());
 
+
     }
 
 

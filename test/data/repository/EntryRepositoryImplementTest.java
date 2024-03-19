@@ -14,68 +14,87 @@ class EntryRepositoryImplementTest {
     }
     @Test
     public void saveOneEntryTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
         assertEquals(1l, repository.count());
     }
     @Test
     public void saveTwoEntry_countIsTwoTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
-        Entry entry2 = new Entry("Love life", "Love na scam");
+        Entry entry2 = new Entry();
+        entry2.setTitle("second title");
+        entry2.setBody("second body");
         repository.save(entry2);
         assertEquals(2l, repository.count());
     }
     @Test
     public void saveOneEntry_idIsOneTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
         Entry foundEntry = repository.findById(1);
         assertEquals(1, foundEntry.getId());
     }
     @Test
     public void entryCanBeUpdatedTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
-        entry.setTitle("Updated love life");
-        entry.setBody("Love na scam, big time");
+        entry.setTitle("Updated title");
+        entry.setBody("Updated body");
         repository.updateEntry(entry);
-        System.out.println(entry.getTitle());
-        System.out.println(entry.getBody());
-        assertEquals("Updated love life", entry.getTitle());
-        assertEquals("Love na scam, big time",entry.getBody());
+        assertEquals("Updated title", entry.getTitle());
+        assertEquals("Updated body",entry.getBody());
     }
     @Test
     public void saveTwoEntries_updateTheSecondTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
-        assertEquals("Love life", entry.getTitle());
-        assertEquals("Love na scam",entry.getBody());
+        assertEquals("title", entry.getTitle());
+        assertEquals("body",entry.getBody());
 
-        Entry entry2 = new Entry("Money", "is life");
+        Entry entry2 = new Entry();
+        entry2.setTitle("second title");
+        entry2.setBody("second body");
+
         repository.save(entry2);
-        entry2.setTitle("Updated Money");
-        entry2.setBody("I need to make money so I go soft like today's bread");
+        entry2.setTitle("Updated second title");
+        entry2.setBody("Updated second body");
 
         System.out.println(entry2.getTitle());
         System.out.println(entry2.getBody());
         repository.updateEntry(entry2);
-        assertEquals("Updated Money", entry2.getTitle());
-        assertEquals("I need to make money so I go soft like today's bread",entry2.getBody());
+        assertEquals("Updated second title", entry2.getTitle());
+        assertEquals("Updated second body",entry2.getBody());
     }
     @Test
     public void saveOneEntry_deleteEntryTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
         repository.delete(1);
         assertNull(repository.findById(1));
     }
     @Test
     public void saveTwoEntry_deleteFirstEntry_findSecondTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
 
-        Entry entry2 = new Entry("Money wahala", "I go make am this yeah aje!");
+        Entry entry2 = new Entry();
+        entry2.setTitle("second title");
+        entry2.setBody("second body");
         repository.save(entry2);
         repository.delete(1);
         assertNull(repository.findById(entry.getId()));
@@ -83,14 +102,18 @@ class EntryRepositoryImplementTest {
     }
     @Test
     public void saveOneEntry_deleteByObjectTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
         repository.delete(entry);
         assertNull(repository.findById(entry.getId()));
     }
     @Test
     public void saveTwoEntries_deleteFirstEntry_findSecondByTest(){
-        Entry entry = new Entry("Love life", "Love na scam");
+        Entry entry = new Entry();
+        entry.setTitle("title");
+        entry.setBody("body");
         repository.save(entry);
         repository.delete(entry);
         assertNull(repository.findById(entry.getId()));

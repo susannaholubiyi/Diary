@@ -22,9 +22,9 @@ public class DiaryServicesImplements implements DiaryServices{
             diaryRepository.save(newDiary);
     }
 
-    private void isNewUser(String userName) {
-        var diary = diaryRepository.findById(userName);
-        if (diary != null) throw new UserAlreadyExistsException(String.format("%s already exists as a username, kindly reselect", userName));
+    private void isNewUser(String username) {
+        var diary = diaryRepository.findById(username);
+        if (diary != null) throw new UserAlreadyExistsException(String.format("%s already exists as a username, kindly reselect", username));
     }
 
     @Override
@@ -46,6 +46,12 @@ public class DiaryServicesImplements implements DiaryServices{
 
     }
 
+    @Override
+    public Diary findUserBy(String username) {
+        var diary = diaryRepository.findById(username);
+        return diary;
+    }
+
     private boolean validatePassword(String storedPassword, String providedPassword) {
         if(providedPassword.equals(storedPassword)) return true;
         else throw new IncorrectPasswordException(String.format("%s is incorrect, kindly input correct password", providedPassword));
@@ -58,9 +64,6 @@ public class DiaryServicesImplements implements DiaryServices{
         return diary;
     }
 
-    @Override
-    public boolean isLoggedIn() {
-        return isLoggedIn;
-    }
+
 
 }

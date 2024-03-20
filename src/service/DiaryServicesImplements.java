@@ -1,8 +1,10 @@
 package service;
 
 import data.model.Diary;
+import data.model.Entry;
 import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
+import dtos.request.EntryRequest;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
 import service.exceptions.IncorrectPasswordException;
@@ -56,6 +58,24 @@ public class DiaryServicesImplements implements DiaryServices{
         String cleanedName =  cleanUp(username);
         var diary = diaryRepository.findById(cleanedName);
         return diary;
+    }
+
+    @Override
+    public void createEntry(EntryRequest entryRequest) {
+        validateRequest(entryRequest.getTitle());
+        validateRequest(entryRequest.getBody());
+        validateRequest(entryRequest.getAuthor());
+        Entry newEntry = new Entry();
+
+    }
+
+    private void validateRequest(String request) {
+
+    }
+
+    @Override
+    public long getNumberOfEntries() {
+        return 0;
     }
 
     private boolean validatePassword(String storedPassword, String providedPassword) {

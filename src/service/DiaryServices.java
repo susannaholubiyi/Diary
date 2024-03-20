@@ -1,6 +1,7 @@
 package service;
 
 import data.model.Diary;
+import dtos.request.EntryRequest;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
 
@@ -12,4 +13,8 @@ public interface DiaryServices {
     void logout(String name);
 
     Diary findUserBy(String username);
+
+    void createEntry(EntryRequest entryRequest);
+
+    long getNumberOfEntries();
 }

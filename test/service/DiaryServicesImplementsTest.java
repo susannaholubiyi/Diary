@@ -1,5 +1,6 @@
 package service;
 
+import dtos.request.EntryRequest;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
 import org.junit.jupiter.api.Test;
@@ -114,6 +115,26 @@ class DiaryServicesImplementsTest {
         registerRequest.setPassword("password");
         diaryServices.register(registerRequest);
     }
+    @Test
+    public void createEntryTest(){
+        RegisterRequest registerRequest = new RegisterRequest();
+        registerRequest.setUserName("username");
+        registerRequest.setPassword("password");
+        diaryServices.register(registerRequest);
+
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUserName("username");
+        loginRequest.setPassword("password");
+        diaryServices.login(loginRequest);
+
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("title");
+        entryRequest.setBody("body");
+        entryRequest.setAuthor("author");
+        diaryServices.createEntry(entryRequest);
+        assertEquals(1l, diaryServices.getNumberOfEntries());
+    }
+
 
 
 }

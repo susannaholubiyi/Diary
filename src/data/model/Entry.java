@@ -6,8 +6,18 @@ public class Entry {
     private String title;
     private String body;
     private int id;
+
+
+    private String author;
     private LocalDate dateCreated = LocalDate.now();
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
     public int getId() {
         return id;
     }

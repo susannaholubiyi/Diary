@@ -4,15 +4,21 @@ import data.model.Diary;
 import data.model.Entry;
 import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
+import data.repository.EntryRepository;
+import data.repository.EntryRepositoryImplement;
 import dtos.request.EntryRequest;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
-import service.exceptions.IncorrectPasswordException;
-import service.exceptions.NotRegisteredUserException;
-import service.exceptions.UserAlreadyExistsException;
+import exceptions.exceptions.IncorrectPasswordException;
+import exceptions.exceptions.InvalidInputException;
+import exceptions.exceptions.NotRegisteredUserException;
+import exceptions.exceptions.UserAlreadyExistsException;
+
+import java.util.Objects;
 
 public class DiaryServicesImplements implements DiaryServices{
     DiaryRepository diaryRepository = new DiaryRepositoryImplement();
+    EntryRepository entryRepository = new EntryRepositoryImplement();
 
     @Override
     public void register(RegisterRequest registerRequest) {
@@ -62,20 +68,25 @@ public class DiaryServicesImplements implements DiaryServices{
 
     @Override
     public void createEntry(EntryRequest entryRequest) {
-        validateRequest(entryRequest.getTitle());
-        validateRequest(entryRequest.getBody());
-        validateRequest(entryRequest.getAuthor());
         Entry newEntry = new Entry();
+        newEntry.setTitle(validateRequest(entryRequest.getTitle()));
+        newEntry.setBody(validateRequest(entryRequest.getBody()));
+        newEntry.setAuthor(validateRequest(entryRequest.getAuthor()));
+
+        entryRepository.save(newEntry);
 
     }
 
-    private void validateRequest(String request) {
-
+    private String  validateRequest(String request) {
+        if(!Objects.equals(request, "")){
+            return request;
+        }
+        throw new InvalidInputException("Input is invalid");
     }
 
     @Override
     public long getNumberOfEntries() {
-        return 0;
+        return entryRepository.count();
     }
 
     private boolean validatePassword(String storedPassword, String providedPassword) {

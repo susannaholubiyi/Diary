@@ -4,9 +4,9 @@ import dtos.request.EntryRequest;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
 import org.junit.jupiter.api.Test;
-import service.exceptions.IncorrectPasswordException;
-import service.exceptions.NotRegisteredUserException;
-import service.exceptions.UserAlreadyExistsException;
+import exceptions.exceptions.IncorrectPasswordException;
+import exceptions.exceptions.NotRegisteredUserException;
+import exceptions.exceptions.UserAlreadyExistsException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

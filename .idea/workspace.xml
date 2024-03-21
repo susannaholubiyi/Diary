@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9294f37-dc34-4299-8d01-2b65df688ff8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dtos/request/EntryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DiaryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DiaryServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/exceptions/DiaryExceptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/exceptions/InvalidInputException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/model/Entry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/exceptions/IncorrectPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/exceptions/IncorrectPasswordException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/exceptions/NotRegisteredUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/exceptions/NotRegisteredUserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/exceptions/UserAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/exceptions/UserAlreadyExistsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/service/DiaryServicesImplementsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/DiaryServicesImplementsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +90,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServicesImplementsTest.registerUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryServicesImplementsTest.createEntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
         <pattern>
@@ -97,7 +100,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="service" />
       <option name="MAIN_CLASS_NAME" value="service.DiaryServicesImplementsTest" />
-      <option name="METHOD_NAME" value="registerUserTest" />
+      <option name="METHOD_NAME" value="createEntryTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DiaryServicesImplementsTest" />
+        <item itemvalue="JUnit.DiaryServicesImplementsTest.createEntryTest" />
         <item itemvalue="JUnit.DiaryServicesImplementsTest.registerUserWithSmallerCase_UserCanLoinWithUpperCaseTest" />
         <item itemvalue="JUnit.DiaryServicesImplementsTest.usernameIsConvertedToSmallerCaseTest" />
         <item itemvalue="JUnit.DiaryServicesImplementsTest.registerUser_userLogin_userLogoutTest" />
-        <item itemvalue="JUnit.DiaryServicesImplementsTest.registerUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -177,6 +180,7 @@
       <workItem from="1710797669402" duration="1831000" />
       <workItem from="1710834386026" duration="20756000" />
       <workItem from="1710924160196" duration="28000" />
+      <workItem from="1710976593903" duration="3020000" />
     </task>
     <servers />
   </component>

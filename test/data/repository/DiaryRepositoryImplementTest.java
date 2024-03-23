@@ -27,7 +27,10 @@ class DiaryRepositoryImplementTest {
         diary.setUserName("username");
         diary.setPassword("password");
         repository.save(diary);
-        repository.save(diary);
+        Diary diary2 = new Diary();
+        diary2.setUserName("username");
+        diary2.setPassword("password");
+        repository.save(diary2);
         assertEquals(2l, repository.count());
     }
     @Test

@@ -33,4 +33,6 @@ public class Diary {
     private boolean isLocked = true;
 
 
+
+
 }

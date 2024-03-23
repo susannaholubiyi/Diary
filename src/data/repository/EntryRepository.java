@@ -12,4 +12,7 @@ public interface EntryRepository {
     long count();
     void delete(int id);
     void delete(Entry entry);
+    List<Entry> findAllEntriesBy(String author);
+
+    void clear();
 }

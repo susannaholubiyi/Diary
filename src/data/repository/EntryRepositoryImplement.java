@@ -7,21 +7,19 @@ import java.util.List;
 
 public class EntryRepositoryImplement implements EntryRepository{
     private int counter = 0;
-    List<Entry> entries = new ArrayList<>();
+    private static List<Entry> entries = new ArrayList<>();
     @Override
     public Entry save(Entry entry) {
         if (isNew(entry)) {
             createIdFor(entry);
             entries.add(entry);
-            generateId();
-            return entry;
         }
         else updateEntry(entry);
         return entry;
     }
 
     private void createIdFor(Entry entry) {
-        entry.setId(generateId());
+        entry.setId(++counter);
     }
 
     private boolean isNew(Entry entry) {
@@ -30,7 +28,8 @@ public class EntryRepositoryImplement implements EntryRepository{
 
     @Override
     public List<Entry> findAll() {
-        return null;
+
+        return entries;
     }
 
     @Override
@@ -52,8 +51,20 @@ public class EntryRepositoryImplement implements EntryRepository{
         }
 
     }
-    public int generateId() {
-        return ++counter;
+    @Override
+    public List<Entry> findAllEntriesBy(String author) {
+        List<Entry> allEntriesOfUser = new ArrayList<>();
+        for (Entry entry: entries){
+            if (entry.getAuthor().equalsIgnoreCase(author)){
+                allEntriesOfUser.add(entry);
+            }
+        }
+        return allEntriesOfUser;
+    }
+
+    @Override
+    public void clear() {
+        entries.clear();
     }
 
     @Override

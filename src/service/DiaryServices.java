@@ -16,5 +16,4 @@ public interface DiaryServices {
 
     void createEntry(EntryRequest entryRequest);
 
-    long getNumberOfEntries();
 }

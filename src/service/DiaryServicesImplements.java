@@ -17,15 +17,14 @@ import exceptions.exceptions.UserAlreadyExistsException;
 import java.util.Objects;
 
 public class DiaryServicesImplements implements DiaryServices{
-    DiaryRepository diaryRepository = new DiaryRepositoryImplement();
-    EntryRepository entryRepository = new EntryRepositoryImplement();
-
+    private static DiaryRepository diaryRepository = new DiaryRepositoryImplement();
+    private static EntryServices entryServices = new EntryServicesImpl();
     @Override
     public void register(RegisterRequest registerRequest) {
         isNewUser(registerRequest.getUserName());
             Diary newDiary = new Diary();
             String cleanedName = cleanUp(registerRequest.getUserName());
-            newDiary.setUserName(cleanedName);
+            newDiary.setUserName(registerRequest.getUserName());
             newDiary.setPassword(registerRequest.getPassword());
             diaryRepository.save(newDiary);
 
@@ -62,8 +61,7 @@ public class DiaryServicesImplements implements DiaryServices{
     @Override
     public Diary findUserBy(String username) {
         String cleanedName =  cleanUp(username);
-        var diary = diaryRepository.findById(cleanedName);
-        return diary;
+        return  diaryRepository.findById(cleanedName);
     }
 
     @Override
@@ -72,8 +70,8 @@ public class DiaryServicesImplements implements DiaryServices{
         newEntry.setTitle(validateRequest(entryRequest.getTitle()));
         newEntry.setBody(validateRequest(entryRequest.getBody()));
         newEntry.setAuthor(validateRequest(entryRequest.getAuthor()));
-
-        entryRepository.save(newEntry);
+        newEntry.setId(entryRequest.getId());
+        entryServices.save(newEntry);
 
     }
 
@@ -84,10 +82,6 @@ public class DiaryServicesImplements implements DiaryServices{
         throw new InvalidInputException("Input is invalid");
     }
 
-    @Override
-    public long getNumberOfEntries() {
-        return entryRepository.count();
-    }
 
     private boolean validatePassword(String storedPassword, String providedPassword) {
         if(providedPassword.equals(storedPassword)) return true;

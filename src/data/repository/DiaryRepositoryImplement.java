@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DiaryRepositoryImplement implements DiaryRepository{
-    List<Diary> diaries = new ArrayList<>();
+    private static List<Diary> diaries = new ArrayList<>();
     @Override
     public Diary save(Diary diary) {
         removeExistingDiary(diary);
@@ -15,7 +15,7 @@ public class DiaryRepositoryImplement implements DiaryRepository{
     }
 
     private void removeExistingDiary(Diary diary) {
-        diaries.removeIf(foundDiary -> foundDiary == diary);
+        diaries.removeIf(foundDiary -> foundDiary.getUserName().equalsIgnoreCase(diary.getUserName()));
     }
 
     @Override
@@ -49,5 +49,10 @@ public class DiaryRepositoryImplement implements DiaryRepository{
         }
 
 
+    }
+
+    @Override
+    public void clear() {
+        diaries.clear();
     }
 }

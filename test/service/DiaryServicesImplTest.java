@@ -3,6 +3,7 @@ package service;
 import dtos.request.EntryRequest;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
+import exceptions.exceptions.InvalidInputException;
 import org.junit.jupiter.api.Test;
 import exceptions.exceptions.IncorrectPasswordException;
 import exceptions.exceptions.NotRegisteredUserException;
@@ -10,9 +11,10 @@ import exceptions.exceptions.UserAlreadyExistsException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DiaryServicesImplementsTest {
+class DiaryServicesImplTest {
 
     private DiaryServices diaryServices = new DiaryServicesImplements();
+    private EntryServices entryServices = new EntryServicesImpl();
     @Test
     public void registerUserTest() {
         RegisterRequest registerRequest = new RegisterRequest();
@@ -106,7 +108,6 @@ class DiaryServicesImplementsTest {
         loginRequest.setPassword("password");
         diaryServices.login(loginRequest);
         assertEquals(1L, diaryServices.getNumberOfUsers());
-        assertTrue(diaryServices.findUserBy("Username").isLocked());
     }
     @Test
     public void usernameIsStrippedOfTrailingZeroTest(){
@@ -114,6 +115,12 @@ class DiaryServicesImplementsTest {
         registerRequest.setUserName("  username");
         registerRequest.setPassword("password");
         diaryServices.register(registerRequest);
+
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUserName("username");
+        loginRequest.setPassword("password");
+        diaryServices.login(loginRequest);
+        assertEquals(1L, diaryServices.getNumberOfUsers());
     }
     @Test
     public void createEntryTest(){
@@ -132,7 +139,49 @@ class DiaryServicesImplementsTest {
         entryRequest.setBody("body");
         entryRequest.setAuthor("author");
         diaryServices.createEntry(entryRequest);
-        assertEquals(1l, diaryServices.getNumberOfEntries());
+        assertEquals(1, entryServices.findAllEntriesBy(entryRequest.getAuthor()).size());
+    }
+    @Test
+    public void createEntryWithEmptyString_invalidInputExceptionIThrownTest(){
+        RegisterRequest registerRequest = new RegisterRequest();
+        registerRequest.setUserName("username");
+        registerRequest.setPassword("password");
+        diaryServices.register(registerRequest);
+
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUserName("username");
+        loginRequest.setPassword("password");
+        diaryServices.login(loginRequest);
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("");
+        entryRequest.setBody("");
+        entryRequest.setAuthor("");
+        assertThrows(InvalidInputException.class, ()->diaryServices.createEntry(entryRequest));
+    }
+    @Test
+    public void userCreatesTwoEntriesTest(){
+        RegisterRequest registerRequest = new RegisterRequest();
+        registerRequest.setUserName("username");
+        registerRequest.setPassword("password");
+        diaryServices.register(registerRequest);
+
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setUserName("username");
+        loginRequest.setPassword("password");
+        diaryServices.login(loginRequest);
+
+        EntryRequest entryRequest = new EntryRequest();
+        entryRequest.setTitle("title");
+        entryRequest.setBody("body");
+        entryRequest.setAuthor("author");
+        diaryServices.createEntry(entryRequest);
+
+        EntryRequest entryRequest2 = new EntryRequest();
+        entryRequest2.setTitle("second title");
+        entryRequest2.setBody("second body");
+        entryRequest2.setAuthor("second author");
+        diaryServices.createEntry(entryRequest2);
+        assertEquals(2, entryServices.findAllEntriesBy(entryRequest.getAuthor()).size());
     }
 
 

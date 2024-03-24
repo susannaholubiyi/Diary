@@ -43,7 +43,8 @@ public class EntryRepositoryImplement implements EntryRepository{
 
 
     private void updateEntry(Entry entry) {
-        delete(entry);
+        Entry oldEntry = findById(entry.getId());
+        entries.remove(oldEntry);
     }
 
     @Override

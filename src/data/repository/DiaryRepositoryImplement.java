@@ -26,7 +26,7 @@ public class DiaryRepositoryImplement implements DiaryRepository{
     @Override
     public Diary findById(String userName) {
         for (Diary diary: diaries){
-            if (diary.getUserName().equals(userName)) return diary;
+            if (diary.getUserName().equalsIgnoreCase(userName)) return diary;
         }
         return null;
     }

@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9294f37-dc34-4299-8d01-2b65df688ff8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dtos/request/DeleteEntryRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dtos/request/UpdateEntryRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/controllers/DiaryControllersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DiaryControllersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DiaryControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryControllers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dtos/request/EntryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/request/CreateEntryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DiaryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DiaryServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/EntryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/EntryServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/EntryServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/EntryServicesImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data/repository/DiaryRepositoryImplementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/repository/DiaryRepositoryImplementTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/data/repository/EntryRepositoryImplementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/repository/EntryRepositoryImplementTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/service/DiaryServicesImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/DiaryServicesImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controllers/DiaryControllersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/DiaryControllersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/service/EntryServicesImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/EntryServicesImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,48 +73,50 @@
       <recent name="data.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EntryServicesImplTest">
-    <configuration name="DiaryRepositoryImplementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DiaryControllersTest.userCanUpdateEntryTest">
+    <configuration name="DiaryControllersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="data.repository.*" />
+          <option name="PATTERN" value="controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="data.repository" />
-      <option name="MAIN_CLASS_NAME" value="data.repository.DiaryRepositoryImplementTest" />
+      <option name="PACKAGE_NAME" value="controllers" />
+      <option name="MAIN_CLASS_NAME" value="controllers.DiaryControllersTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiaryServicesImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryControllersTest.userCanCreateEntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.*" />
+          <option name="PATTERN" value="controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.DiaryServicesImplTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="controllers" />
+      <option name="MAIN_CLASS_NAME" value="controllers.DiaryControllersTest" />
+      <option name="METHOD_NAME" value="userCanCreateEntryTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntryRepositoryImplementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DiaryControllersTest.userCanUpdateEntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="data.repository.*" />
+          <option name="PATTERN" value="controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="data.repository" />
-      <option name="MAIN_CLASS_NAME" value="data.repository.EntryRepositoryImplementTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="controllers" />
+      <option name="MAIN_CLASS_NAME" value="controllers.DiaryControllersTest" />
+      <option name="METHOD_NAME" value="userCanUpdateEntryTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EntryServicesImplTest" />
+        <item itemvalue="JUnit.DiaryControllersTest.userCanUpdateEntryTest" />
+        <item itemvalue="JUnit.DiaryControllersTest.userCanCreateEntryTest" />
+        <item itemvalue="JUnit.DiaryControllersTest" />
         <item itemvalue="JUnit.EntryServicesImplTest.userCanDeleteEntryTest" />
-        <item itemvalue="JUnit.EntryRepositoryImplementTest" />
-        <item itemvalue="JUnit.DiaryRepositoryImplementTest" />
-        <item itemvalue="JUnit.DiaryServicesImplTest" />
+        <item itemvalue="JUnit.EntryServicesImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +181,7 @@
       <workItem from="1710976593903" duration="17227000" />
       <workItem from="1711097685018" duration="15327000" />
       <workItem from="1711201458107" duration="17224000" />
-      <workItem from="1711274389548" duration="18490000" />
+      <workItem from="1711274389548" duration="24213000" />
     </task>
     <servers />
   </component>

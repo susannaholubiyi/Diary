@@ -63,8 +63,8 @@ public class DiaryServicesImplements implements DiaryServices{
         Entry newEntry = new Entry();
         newEntry.setTitle(validateRequest(entryRequest.getTitle()));
         newEntry.setBody(validateRequest(entryRequest.getBody()));
-        if (validateAuthor(validateRequest(entryRequest.getAuthor()))) {
-            if (validateIfLoggedIn(entryRequest.getAuthor())) {
+        if (isValidAuthor(validateRequest(entryRequest.getAuthor()))) {
+            if (isLoggedIn(entryRequest.getAuthor())) {
                 newEntry.setAuthor(validateRequest(entryRequest.getAuthor()));
                 entryServices.save(newEntry);
             }
@@ -81,7 +81,10 @@ public class DiaryServicesImplements implements DiaryServices{
 
     @Override
     public void updateEntry(UpdateEntryRequest updateEntryRequest) {
+        String cleanedName = cleanUp(updateEntryRequest.getAuthor());
+        Diary diary = isRegisteredUser(cleanedName);
         entryServices.updateEntry(updateEntryRequest);
+        diaryRepository.save(diary);
     }
 
     @Override
@@ -99,11 +102,11 @@ public class DiaryServicesImplements implements DiaryServices{
         return entryServices.findAllEntriesBy(author);
     }
 
-    private boolean validateAuthor(String author){
+    private boolean isValidAuthor(String author){
         boolean condition = diaryRepository.findById(author) == null;
         return !condition;
     }
-    private boolean validateIfLoggedIn(String author){
+    private boolean isLoggedIn(String author){
         boolean condition = !diaryRepository.findById(author).getLock();
         if (condition){
             return  true;

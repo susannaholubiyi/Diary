@@ -112,6 +112,7 @@ public class EntryServicesImplTest {
     }
     @Test
     public void userCanDeleteEntryTest(){
+        entryRepository.clear();
         RegisterRequest registerRequest = new RegisterRequest();
         registerRequest.setUserName("username");
         registerRequest.setPassword("password");
@@ -149,6 +150,7 @@ public class EntryServicesImplTest {
     }
     @Test
     public void userCanUpdateEntryTest(){
+        entryRepository.clear();
         RegisterRequest registerRequest = new RegisterRequest();
         registerRequest.setUserName("username");
         registerRequest.setPassword("password");

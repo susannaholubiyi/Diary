@@ -38,13 +38,13 @@ public class DiaryRepositoryImplement implements DiaryRepository{
 
     @Override
     public void delete(String userName) {
-        diaries.removeIf(diary -> diary.getUserName().equals(userName));
+        diaries.removeIf(diary -> diary.getUserName().equalsIgnoreCase(userName));
     }
 
     @Override
     public void delete(Diary diary) {
         for (Diary diaryToBeDeleted : diaries){
-            if (diary.equals(diaryToBeDeleted)) diaries.remove(diary);
+            if (diaryToBeDeleted.equals(diary)) diaries.remove(diaryToBeDeleted);
             break;
         }
 

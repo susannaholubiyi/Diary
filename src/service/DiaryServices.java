@@ -15,5 +15,6 @@ public interface DiaryServices {
     Diary findUserBy(String username);
 
     void createEntry(EntryRequest entryRequest);
+    void clear();
 
 }

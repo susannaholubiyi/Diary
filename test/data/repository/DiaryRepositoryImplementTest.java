@@ -1,6 +1,7 @@
 package data.repository;
 
 import data.model.Diary;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,10 @@ class DiaryRepositoryImplementTest {
     @BeforeEach
     public void repositoryInitializer(){
         repository = new DiaryRepositoryImplement();
+    }
+    @AfterEach
+    public void repositoryTearDown(){
+        repository.clear();
     }
     @Test
     public void diariesCanSaveOneDiaryTest(){
@@ -28,7 +33,7 @@ class DiaryRepositoryImplementTest {
         diary.setPassword("password");
         repository.save(diary);
         Diary diary2 = new Diary();
-        diary2.setUserName("username");
+        diary2.setUserName("second username");
         diary2.setPassword("password");
         repository.save(diary2);
         assertEquals(2l, repository.count());

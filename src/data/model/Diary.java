@@ -19,6 +19,9 @@ public class Diary {
     public void setLock(boolean locked){
         isLocked = locked;
     }
+    public boolean getLock(){
+        return isLocked;
+    }
     public boolean isLocked(){
         return isLocked;
     }

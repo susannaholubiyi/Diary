@@ -4,15 +4,10 @@ import data.model.Diary;
 import data.model.Entry;
 import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
-import data.repository.EntryRepository;
-import data.repository.EntryRepositoryImplement;
 import dtos.request.EntryRequest;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
-import exceptions.exceptions.IncorrectPasswordException;
-import exceptions.exceptions.InvalidInputException;
-import exceptions.exceptions.NotRegisteredUserException;
-import exceptions.exceptions.UserAlreadyExistsException;
+import exceptions.exceptions.*;
 
 import java.util.Objects;
 
@@ -24,7 +19,7 @@ public class DiaryServicesImplements implements DiaryServices{
         isNewUser(registerRequest.getUserName());
             Diary newDiary = new Diary();
             String cleanedName = cleanUp(registerRequest.getUserName());
-            newDiary.setUserName(registerRequest.getUserName());
+            newDiary.setUserName(cleanedName);
             newDiary.setPassword(registerRequest.getPassword());
             diaryRepository.save(newDiary);
 
@@ -45,7 +40,7 @@ public class DiaryServicesImplements implements DiaryServices{
         String cleanedName = cleanUp(loginRequest.getUserName());
         Diary diary = isRegisteredUser(cleanedName);
         String providedPassword = loginRequest.getPassword();
-        if(validatePassword(diary.getPassword(), providedPassword)){diary.setLock(true);}
+        if(validatePassword(diary.getPassword(), providedPassword)){diary.setLock(false);}
         diaryRepository.save(diary);
     }
 
@@ -53,7 +48,7 @@ public class DiaryServicesImplements implements DiaryServices{
     public void logout(String username) {
         String cleanedName =  cleanUp(username);
         var diary = findUserBy(cleanedName);
-        diary.setLock(false);
+        diary.setLock(true);
     }
 
 
@@ -69,12 +64,34 @@ public class DiaryServicesImplements implements DiaryServices{
         Entry newEntry = new Entry();
         newEntry.setTitle(validateRequest(entryRequest.getTitle()));
         newEntry.setBody(validateRequest(entryRequest.getBody()));
-        newEntry.setAuthor(validateRequest(entryRequest.getAuthor()));
-        newEntry.setId(entryRequest.getId());
-        entryServices.save(newEntry);
+        if (validateAuthor(validateRequest(entryRequest.getAuthor()))) {
+            if (validateIfLoggedIn(entryRequest.getAuthor())) {
+                newEntry.setAuthor(validateRequest(entryRequest.getAuthor()));
+                newEntry.setId(entryRequest.getId());
+                entryServices.save(newEntry);
+            }
+        }else {
+            throw new NotRegisteredUserException(String.format("%s is not a registered user", entryRequest.getAuthor()));
+        }
 
     }
 
+    @Override
+    public void clear() {
+        diaryRepository.clear();
+    }
+
+    private boolean validateAuthor(String author){
+        boolean condition = diaryRepository.findById(author) == null;
+        return !condition;
+    }
+    private boolean validateIfLoggedIn(String author){
+        boolean condition = !diaryRepository.findById(author).getLock();
+        if (condition){
+            return  true;
+        }
+        else throw new UserNotLoggedInException("You are not logged in");
+    }
     private String  validateRequest(String request) {
         if(!Objects.equals(request, "")){
             return request;

@@ -1,6 +1,7 @@
 package data.repository;
 
 import data.model.Entry;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,8 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class EntryRepositoryImplementTest {
     private EntryRepository repository;
     @BeforeEach
-    public void EntryRepositoryInitializer(){
+    public void entryRepositoryInitializer(){
         repository = new EntryRepositoryImplement();
+    }
+    @AfterEach
+    public void entryRepositoryTearDown(){
+        repository.clear();
     }
     @Test
     public void saveOneEntryTest(){

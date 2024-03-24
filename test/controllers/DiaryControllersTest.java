@@ -1,6 +1,5 @@
 package controllers;
 
-import data.model.Diary;
 
 import dtos.request.*;
 import exceptions.exceptions.NoEntryException;

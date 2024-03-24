@@ -1,9 +1,10 @@
 package service;
 
 import data.model.Diary;
-import dtos.request.EntryRequest;
-import dtos.request.LoginRequest;
-import dtos.request.RegisterRequest;
+import data.model.Entry;
+import dtos.request.*;
+
+import java.util.List;
 
 public interface DiaryServices {
     void register(RegisterRequest registerRequest);
@@ -12,9 +13,13 @@ public interface DiaryServices {
     void login(LoginRequest loginRequest);
     void logout(String name);
 
-    Diary findUserBy(String username);
+    Diary findBy(String username);
 
-    void createEntry(EntryRequest entryRequest);
+    void createEntry(CreateEntryRequest entryRequest);
     void clear();
+    void updateEntry(UpdateEntryRequest updateEntryRequest);
+    void deleteEntry(DeleteEntryRequest deleteEntryRequest);
+    Entry findBy(int id);
+    List<Entry> findAllEntriesBy(String author);
 
 }

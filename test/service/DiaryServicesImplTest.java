@@ -4,7 +4,7 @@ import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
 import data.repository.EntryRepository;
 import data.repository.EntryRepositoryImplement;
-import dtos.request.EntryRequest;
+import dtos.request.CreateEntryRequest;
 import dtos.request.LoginRequest;
 import dtos.request.RegisterRequest;
 import exceptions.exceptions.InvalidInputException;
@@ -30,12 +30,12 @@ class DiaryServicesImplTest {
 
         diaryRepository = new DiaryRepositoryImplement();
         entryRepository = new EntryRepositoryImplement();
-        diaryRepository.clear();
+        diaryRepository.clearDiary();
         entryRepository.clear();
     }
     @AfterEach
     public void tearDown(){
-        diaryRepository.clear();
+        diaryRepository.clearDiary();
         entryRepository.clear();
 
     }
@@ -84,7 +84,7 @@ class DiaryServicesImplTest {
         loginRequest.setUserName("username");
         loginRequest.setPassword("password");
         diaryServices.login(loginRequest);
-        assertFalse(diaryServices.findUserBy("username").isLocked());
+        assertFalse(diaryServices.findBy("username").isLocked());
     }
     @Test
     public void userLoginWithoutRegistering_notRegisteredUserExceptionIsThrownTest(){
@@ -117,9 +117,9 @@ class DiaryServicesImplTest {
         loginRequest.setPassword("password");
         diaryServices.login(loginRequest);
 
-        assertFalse(diaryServices.findUserBy("username").isLocked());
+        assertFalse(diaryServices.findBy("username").isLocked());
         diaryServices.logout("username");
-        assertTrue(diaryServices.findUserBy("username").isLocked());
+        assertTrue(diaryServices.findBy("username").isLocked());
     }
     @Test
     public void registerUserWithSmallerCase_UserCanLoginWithUpperCaseTest(){
@@ -159,7 +159,7 @@ class DiaryServicesImplTest {
         loginRequest.setPassword("password");
         diaryServices.login(loginRequest);
 
-        EntryRequest entryRequest = new EntryRequest();
+        CreateEntryRequest entryRequest = new CreateEntryRequest();
         entryRequest.setTitle("title");
         entryRequest.setBody("body");
         entryRequest.setAuthor("username");
@@ -177,7 +177,7 @@ class DiaryServicesImplTest {
         loginRequest.setUserName("username");
         loginRequest.setPassword("password");
         diaryServices.login(loginRequest);
-        EntryRequest entryRequest = new EntryRequest();
+        CreateEntryRequest entryRequest = new CreateEntryRequest();
         entryRequest.setTitle("");
         entryRequest.setBody("");
         entryRequest.setAuthor("");
@@ -195,13 +195,13 @@ class DiaryServicesImplTest {
         loginRequest.setPassword("password");
         diaryServices.login(loginRequest);
 
-        EntryRequest entryRequest = new EntryRequest();
+        CreateEntryRequest entryRequest = new CreateEntryRequest();
         entryRequest.setTitle("title");
         entryRequest.setBody("body");
         entryRequest.setAuthor("username");
         diaryServices.createEntry(entryRequest);
 
-        EntryRequest entryRequest2 = new EntryRequest();
+        CreateEntryRequest entryRequest2 = new CreateEntryRequest();
         entryRequest2.setTitle("second title");
         entryRequest2.setBody("second body");
         entryRequest2.setAuthor("username");

@@ -12,9 +12,10 @@ public class EntryRepositoryImplement implements EntryRepository{
     public Entry save(Entry entry) {
         if (isNew(entry)) {
             createIdFor(entry);
-            entries.add(entry);
         }
         else updateEntry(entry);
+
+        entries.add(entry);
         return entry;
     }
 
@@ -40,17 +41,11 @@ public class EntryRepositoryImplement implements EntryRepository{
         return null;
     }
 
-    @Override
-    public void updateEntry(Entry entry) {
-        for (Entry findEntry :entries) {
-            if(findEntry.getId() == entry.getId()) {
-                findEntry.setBody(entry.getBody());
-                findEntry.setTitle(entry.getTitle());
 
-            }
-        }
-
+    private void updateEntry(Entry entry) {
+        delete(entry);
     }
+
     @Override
     public List<Entry> findAllEntriesBy(String author) {
         List<Entry> allEntriesOfUser = new ArrayList<>();

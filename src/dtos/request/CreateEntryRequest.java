@@ -1,6 +1,6 @@
 package dtos.request;
 
-public class EntryRequest {
+public class CreateEntryRequest {
     public String getTitle() {
         return title;
     }
@@ -26,12 +26,7 @@ public class EntryRequest {
     private String title;
     private String body;
     private String author;
-    private int id;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-    public int getId(){
-        return id;
-    }
+
+
 }

@@ -15,7 +15,7 @@ class DiaryRepositoryImplementTest {
     }
     @AfterEach
     public void repositoryTearDown(){
-        repository.clear();
+        repository.clearDiary();
     }
     @Test
     public void diariesCanSaveOneDiaryTest(){

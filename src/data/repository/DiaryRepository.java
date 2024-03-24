@@ -12,5 +12,5 @@ public interface DiaryRepository  {
     void delete(String userName);
     void delete(Diary diary);
 
-    void clear();
+    void clearDiary();
 }

@@ -47,12 +47,10 @@ public class DiaryRepositoryImplement implements DiaryRepository{
             if (diaryToBeDeleted.equals(diary)) diaries.remove(diaryToBeDeleted);
             break;
         }
-
-
     }
 
     @Override
-    public void clear() {
+    public void clearDiary() {
         diaries.clear();
     }
 }

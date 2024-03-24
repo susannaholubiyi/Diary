@@ -54,7 +54,7 @@ class EntryRepositoryImplementTest {
         repository.save(entry);
         entry.setTitle("Updated title");
         entry.setBody("Updated body");
-        repository.updateEntry(entry);
+        repository.save(entry);
         assertEquals("Updated title", entry.getTitle());
         assertEquals("Updated body",entry.getBody());
     }
@@ -77,7 +77,7 @@ class EntryRepositoryImplementTest {
 
         System.out.println(entry2.getTitle());
         System.out.println(entry2.getBody());
-        repository.updateEntry(entry2);
+        repository.save(entry2);
         assertEquals("Updated second title", entry2.getTitle());
         assertEquals("Updated second body",entry2.getBody());
     }

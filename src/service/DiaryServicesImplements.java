@@ -4,11 +4,10 @@ import data.model.Diary;
 import data.model.Entry;
 import data.repository.DiaryRepository;
 import data.repository.DiaryRepositoryImplement;
-import dtos.request.EntryRequest;
-import dtos.request.LoginRequest;
-import dtos.request.RegisterRequest;
+import dtos.request.*;
 import exceptions.exceptions.*;
 
+import java.util.List;
 import java.util.Objects;
 
 public class DiaryServicesImplements implements DiaryServices{
@@ -47,27 +46,26 @@ public class DiaryServicesImplements implements DiaryServices{
     @Override
     public void logout(String username) {
         String cleanedName =  cleanUp(username);
-        var diary = findUserBy(cleanedName);
+        var diary = findBy(cleanedName);
         diary.setLock(true);
     }
 
 
 
     @Override
-    public Diary findUserBy(String username) {
+    public Diary findBy(String username) {
         String cleanedName =  cleanUp(username);
         return  diaryRepository.findById(cleanedName);
     }
 
     @Override
-    public void createEntry(EntryRequest entryRequest) {
+    public void createEntry(CreateEntryRequest entryRequest) {
         Entry newEntry = new Entry();
         newEntry.setTitle(validateRequest(entryRequest.getTitle()));
         newEntry.setBody(validateRequest(entryRequest.getBody()));
         if (validateAuthor(validateRequest(entryRequest.getAuthor()))) {
             if (validateIfLoggedIn(entryRequest.getAuthor())) {
                 newEntry.setAuthor(validateRequest(entryRequest.getAuthor()));
-                newEntry.setId(entryRequest.getId());
                 entryServices.save(newEntry);
             }
         }else {
@@ -78,7 +76,27 @@ public class DiaryServicesImplements implements DiaryServices{
 
     @Override
     public void clear() {
-        diaryRepository.clear();
+        diaryRepository.clearDiary();
+    }
+
+    @Override
+    public void updateEntry(UpdateEntryRequest updateEntryRequest) {
+        entryServices.updateEntry(updateEntryRequest);
+    }
+
+    @Override
+    public void deleteEntry(DeleteEntryRequest deleteEntryRequest) {
+        entryServices.deleteEntry(deleteEntryRequest);
+    }
+
+    @Override
+    public Entry findBy(int id) {
+        return  entryServices.findBy(id);
+    }
+
+    @Override
+    public List<Entry> findAllEntriesBy(String author) {
+        return entryServices.findAllEntriesBy(author);
     }
 
     private boolean validateAuthor(String author){

@@ -5,13 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9294f37-dc34-4299-8d01-2b65df688ff8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/data/model/Diary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/dtos/request/CreateEntryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/dtos/request/DeleteEntryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/dtos/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/dtos/request/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/dtos/request/UpdateEntryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/DiaryControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/DiaryControllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/DiaryControllersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/DiaryControllersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/service/EntryServicesImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/service/EntryServicesImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiaryThatRemembers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DiaryThatRemembers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DiaryControllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/controller/DiaryControllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Diary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/model/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/data/model/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/repository/DiaryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/DiaryRepositoryImplement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/repository/EntryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repository/EntryRepositoryImplement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/request/CreateEntryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/request/DeleteEntryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/request/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/request/RegisterRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/request/UpdateEntryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dtos/request/UpdateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions/DiaryExceptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/exceptions/DiaryExceptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions/IncorrectPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/exceptions/IncorrectPasswordException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions/InvalidId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/exceptions/InvalidId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions/InvalidInputException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/exceptions/InvalidInputException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions/NoEntryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/exceptions/NoEntryException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions/NotRegisteredUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/exceptions/NotRegisteredUserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions/UserAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/exceptions/UserAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exceptions/exceptions/UserNotLoggedInException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/exceptions/UserNotLoggedInException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DiaryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/service/DiaryServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DiaryServicesImplements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/service/DiaryServicesImplements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/EntryServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/service/EntryServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/EntryServicesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/africa/semicolon/DiaryThatRemembers/service/EntryServicesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controllers/DiaryControllersTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/data/repository/DiaryRepositoryImplementTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/data/repository/EntryRepositoryImplementTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/service/DiaryServicesImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/service/EntryServicesImplTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,35 +70,48 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2djb1j5ylcSvn0ZjdXTrfO3EtdG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "2c5f99d2ca92884d17e29d196f98448b",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -73,7 +124,7 @@
       <recent name="data.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DiaryControllersTest.userCanUpdateEntryTest">
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="DiaryControllersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
@@ -121,21 +172,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntryServicesImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiaryThatRemembers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.EntryServicesImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EntryServicesImplTest.userCanDeleteEntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiaryThatRemembers" />
       <extension name="coverage">
@@ -152,13 +188,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="DiaryThatRemembers" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="africa.semicolon.DiaryThatRemembers.Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="africa.semicolon.DiaryThatRemembers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Main" />
         <item itemvalue="JUnit.DiaryControllersTest.userCanUpdateEntryTest" />
         <item itemvalue="JUnit.DiaryControllersTest.userCanCreateEntryTest" />
         <item itemvalue="JUnit.DiaryControllersTest" />
         <item itemvalue="JUnit.EntryServicesImplTest.userCanDeleteEntryTest" />
-        <item itemvalue="JUnit.EntryServicesImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +230,9 @@
       <workItem from="1710976593903" duration="17227000" />
       <workItem from="1711097685018" duration="15327000" />
       <workItem from="1711201458107" duration="17224000" />
-      <workItem from="1711274389548" duration="24213000" />
+      <workItem from="1711274389548" duration="37978000" />
+      <workItem from="1711318405426" duration="7000" />
+      <workItem from="1711353504904" duration="295000" />
     </task>
     <servers />
   </component>
